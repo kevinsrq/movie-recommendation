@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor
 
-def _fetch_movie_info(query, year, movie_or_show, api_key):
+def _fetch_movie_info(query: str, year: int, movie_or_show: str, api_key: str):
     """
     Realiza uma chamada à API do The Movie Database (TMDb) para obter informações sobre um filme ou programa de TV.
 
@@ -61,7 +61,7 @@ def _fetch_movie_info(query, year, movie_or_show, api_key):
             'vote_count': None
         }
 
-def search_info(queries: list, years: list, movie_or_show: list, api_key=None, return_all=False):
+def search_info(queries: list, years: list, movie_or_show: list, api_key: str = None, return_all = False) -> pd.DataFrame:
     """
     Realiza a busca de informações de filmes ou programas de TV utilizando chamadas paralelas à API do The Movie Database (TMDb).
 
@@ -81,7 +81,7 @@ def search_info(queries: list, years: list, movie_or_show: list, api_key=None, r
                           ou estreia), 'tm_id' (ID no TMDb), 'popularity' (popularidade), 'vote_average' (média de votos)
                           e 'vote_count' (total de votos).
     """
-    
+
     with ThreadPoolExecutor() as executor:
         futures = []
         for query, year, movie_or_show in zip(queries, years, movie_or_show):
