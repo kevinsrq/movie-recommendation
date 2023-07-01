@@ -1,2 +1,3 @@
-# movie-recommendation
-Model for movie-recomendation using embeddings, for information retrieval 
+# Movie Recomendation 
+
+Welcome to our project on building a movie recommendation system! The objective of this project is to develop an intelligent system that recommends new movies based on a prior watched title. We understand that choosing the right movie to watch can sometimes be overwhelming, considering the vast amount of available options. Therefore, our goal is to simplify this process by leveraging the power of machine learning and data analysis.
